@@ -1,0 +1,40 @@
+{
+  "name": "react-native-websocket",
+  "version": "1.0.0",
+  "description": "WebSocket API wrapped as a component for React Native",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiaanduplessis/react-native-websocket.git"
+  },
+  "homepage": "https://github.com/tiaanduplessis/react-native-websocket",
+  "bugs": "https://github.com/tiaanduplessis/react-native-websocket/issues",
+  "author": {
+    "name": "Tiaan",
+    "email": "tiaanduplessis@hotmail.com",
+    "url": "tiaan.beer"
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard --parser babel-eslint --verbose",
+    "lint:fix": "standard --parser babel-eslint --fix --verbose",
+    "precommit": "npm test"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "websocket",
+    "ws",
+    "component",
+    "react-native-websocket"
+  ],
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "husky": "^0.13.3",
+    "standard": "^10.0.1"
+  }
+}
