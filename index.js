@@ -44,7 +44,7 @@ class WS extends Component {
     }
     ws.onmessage = (event) => { this.props.onMessage && this.props.onMessage(event) }
     ws.onerror = (error) => { this.props.onError && this.props.onError(error) }
-    ws.onclose = () => this.reconnect ? this._handleWebsocketSetup() : (this.props.onClose && this.props.onClose())
+    ws.onclose = () => this.reconnect ? this._handleWebSocketSetup() : (this.props.onClose && this.props.onClose())
     this.setState({ws})
   }
 }
