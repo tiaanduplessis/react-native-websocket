@@ -64,6 +64,8 @@
 
 ## About
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/react-native-websocket.svg)](https://greenkeeper.io/)
+
 This module provides a simple component wrapper around the the WebSocket API. It provides a declarative way of handling a WebSocket connection.
 
 ## Install
