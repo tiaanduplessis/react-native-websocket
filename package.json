@@ -33,8 +33,8 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.2",
-    "husky": "^0.13.3",
+    "babel-eslint": "^8.0.1",
+    "husky": "^0.14.3",
     "standard": "^10.0.1"
   }
 }
