@@ -68,6 +68,37 @@
 
 This module provides a simple component wrapper around the the WebSocket API. It provides a declarative way of handling a WebSocket connection.
 
+## Websockets in React Native
+
+If you're interested in using websockets in React Native generally here is a slightly abbreviated version of the source of this component:
+
+```jsx
+class WS extends Component {
+	//...
+	send = (data) => this.state.ws.send(data)
+	componentDidMount () {
+		this.reconnect = !!this.props.reconnect
+		this._handleWebSocketSetup()
+	}
+	componentWillUnmount () {
+		this.reconnect = false
+		this.state.ws.close()
+	}
+	_handleWebSocketSetup = () => {
+		const ws = new WebSocket(this.props.url)
+		ws.onopen = () => {
+			this.props.onOpen && this.props.onOpen()
+		}
+		ws.onmessage = (event) => { this.props.onMessage && this.props.onMessage(event) }
+		ws.onerror = (error) => { this.props.onError && this.props.onError(error) }
+		ws.onclose = () => this.reconnect ? this._handleWebSocketSetup() : (this.props.onClose && this.props.onClose())
+		this.setState({ws})
+	}
+}
+```
+
+As you can see the component simply wraps the native websocket api. It's also recommended that you implement your own [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) reconnect logic if you plan on using this component in production.
+
 ## Install
 
 ```sh
