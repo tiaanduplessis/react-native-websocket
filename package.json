@@ -12,8 +12,7 @@
   "bugs": "https://github.com/tiaanduplessis/react-native-websocket/issues",
   "author": {
     "name": "Tiaan",
-    "email": "tiaanduplessis@hotmail.com",
-    "url": "tiaan.beer"
+    "email": "tiaanduplessis@hotmail.com"
   },
   "scripts": {
     "test": "npm run lint",
@@ -30,7 +29,7 @@
     "react-native-websocket"
   ],
   "dependencies": {
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.6.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.1",
