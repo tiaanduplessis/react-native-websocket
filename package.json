@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.0.1",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0",
     "standard": "^11.0.0"
   }
 }
