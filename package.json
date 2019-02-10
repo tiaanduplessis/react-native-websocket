@@ -29,7 +29,7 @@
     "react-native-websocket"
   ],
   "dependencies": {
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.7.0"
   },
   "devDependencies": {
     "husky": "^1.0.0",
