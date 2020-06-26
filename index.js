@@ -13,7 +13,8 @@ class WS extends Component {
   }
 
   static propTypes = {
-    url: PropTypes.string.isRequired,
+		url: PropTypes.string.isRequired,
+		protocols: PropTypes.string || PropTypes.array,
     reconnect: PropTypes.bool,
     onOpen: PropTypes.func,
     onMessage: PropTypes.func,
@@ -38,7 +39,7 @@ class WS extends Component {
   }
 
   _handleWebSocketSetup = () => {
-    const ws = new WebSocket(this.props.url)
+    const ws = new WebSocket(this.props.url, this.props.protocols)
     ws.onopen = () => {
       this.props.onOpen && this.props.onOpen()
     }

@@ -1,6 +1,6 @@
 # react-native-websocket
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/react-native-websocket.svg)](https://greenkeeper.io/) [![Package version](https://img.shields.io/npm/v/react-native-websocket.svg?style=flat-square)](https://npmjs.org/package/react-native-websocket) [![Standard](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard) [![Travis Build](https://img.shields.io/travis/tiaanduplessis/react-native-websocket.svg?style=flat-square)](https://travis-ci.org/tiaanduplessis/react-native-websocket) [![GitHub version](https://badge.fury.io/gh/tiaanduplessis%2Freact-native-websocket.svg?style=flat-square)](https://badge.fury.io/gh/tiaanduplessis%2Freact-native-websocket) [![Dependency CI](https://dependencyci.com/github/tiaanduplessis/react-native-websocket/badge?style=flat-square)](https://dependencyci.com/github/tiaanduplessis/react-native-websocket) [![License](https://img.shields.io/npm/l/react-native-websocket.svg?style=flat-square)](https://github.com/tiaanduplessis/react-native-websocket/blob/master/LICENSE) 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/react-native-websocket.svg)](https://greenkeeper.io/) [![Package version](https://img.shields.io/npm/v/react-native-websocket.svg?style=flat-square)](https://npmjs.org/package/react-native-websocket) [![Standard](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard) [![Travis Build](https://img.shields.io/travis/tiaanduplessis/react-native-websocket.svg?style=flat-square)](https://travis-ci.org/tiaanduplessis/react-native-websocket) [![GitHub version](https://badge.fury.io/gh/tiaanduplessis%2Freact-native-websocket.svg?style=flat-square)](https://badge.fury.io/gh/tiaanduplessis%2Freact-native-websocket) [![Dependency CI](https://dependencyci.com/github/tiaanduplessis/react-native-websocket/badge?style=flat-square)](https://dependencyci.com/github/tiaanduplessis/react-native-websocket) [![License](https://img.shields.io/npm/l/react-native-websocket.svg?style=flat-square)](https://github.com/tiaanduplessis/react-native-websocket/blob/master/LICENSE)
 
 
 
@@ -31,7 +31,7 @@ class WS extends Component {
 		this.state.ws.close()
 	}
 	_handleWebSocketSetup = () => {
-		const ws = new WebSocket(this.props.url)
+		const ws = new WebSocket(this.props.url, this.props.protocols)
 		ws.onopen = () => {
 			this.props.onOpen && this.props.onOpen()
 		}
@@ -68,7 +68,8 @@ export default class Example extends Component {
       <View style={{flex: 1}}>
         <WS
           ref={ref => {this.ws = ref}}
-          url="wss://echo.websocket.org/"
+					url="wss://echo.websocket.org/"
+					protocols={["protocol1", "protocol2"]} // or protocols={"protocol1"} is optional
           onOpen={() => {
             console.log('Open!')
             this.ws.send('Hello')
