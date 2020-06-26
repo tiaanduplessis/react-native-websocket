@@ -67,9 +67,9 @@ export default class Example extends Component {
     return (
       <View style={{flex: 1}}>
         <WS
-		  ref={ref => {this.ws = ref}}
-		  url="wss://echo.websocket.org/"
-		  protocols={["protocol1", "protocol2"]}
+          ref={ref => {this.ws = ref}}
+	  url="wss://echo.websocket.org/"
+	  protocols={["protocol1", "protocol2"]}
           onOpen={() => {
             console.log('Open!')
             this.ws.send('Hello')
